@@ -20,7 +20,7 @@ public class Problem_21Tests
     {
         var number = 284;
         var sut = new AmicableNumbers();
-        List<int> properDivisors = new List<int>() { 1, 2, 4, 71 , 142 };
+        List<int> properDivisors = new List<int>() { 1, 2, 4, 71, 142 };
         var actual = sut.ProperDivisors(number);
 
         actual.Should().BeEquivalentTo(properDivisors);

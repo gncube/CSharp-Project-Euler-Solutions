@@ -8,6 +8,23 @@ public class AmicableNumbers
 
     public List<int> ProperDivisors(int number)
     {
-        return new List<int> { 1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110 };
+        var properDivisors = new List<int>();
+
+        if (number == 0)
+        {
+            properDivisors.Add(1);
+            return properDivisors;
+        }
+
+        for (int i = number; i > 1; i--)
+        {
+            if (number % i == 0)
+            {
+                int properDivisor = number / (int)i;
+                properDivisors.Add(properDivisor);
+            }
+        }
+
+        return properDivisors;
     }
 }

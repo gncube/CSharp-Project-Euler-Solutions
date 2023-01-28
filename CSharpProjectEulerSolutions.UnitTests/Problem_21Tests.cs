@@ -15,6 +15,17 @@ public class Problem_21Tests
 
         actual.Should().BeEquivalentTo(properDivisors);
     }
+
+    [Theory]
+    [InlineData(new int[] { 1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110 }, 284)]
+    public void ReturnTheSumOfArray(int[] numbers, int expected)
+    {
+        var sut = new AmicableNumbers();
+        List<int> numbersList = numbers.ToList();
+        var actual = sut.SumOfArray(numbersList);
+
+        actual.Should().Be(expected);
+    }
 }
 
 /*

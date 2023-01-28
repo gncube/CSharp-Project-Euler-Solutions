@@ -27,4 +27,9 @@ public class AmicableNumbers
 
         return properDivisors;
     }
+
+    internal object SumOfArray(List<int> numbersList)
+    {
+        throw new NotImplementedException();
+    }
 }

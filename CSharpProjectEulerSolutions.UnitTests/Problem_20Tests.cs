@@ -1,10 +1,4 @@
 ﻿using FluentAssertions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSharpProjectEulerSolutions.UnitTests
 {
@@ -20,16 +14,25 @@ namespace CSharpProjectEulerSolutions.UnitTests
      */
     public class Problem_20Tests
     {
-        [Fact]
-        public void ShouldReturnTheSumOfTheFactorial()
+        [Theory]
+        [InlineData(27, 10)]
+        public void ShouldReturnTheSumOfTheFactorial(int expected, int number)
         {
-            var number = 10;
-            BigInteger factorial = 3628800;
-
             var sut = new FactorialDigitSum();
-            var actual = sut.GetDigitsSum(factorial);
+            var actual = sut.GetDigitsSum(number);
 
-            actual.Should().Be(number);
+            actual.Should().Be(expected);
         }
+
+        //[Fact]
+        //public void ShouldReturnTheSumOfTheFactorial2()
+        //{
+        //    int expected = 27;
+        //    int number = 10;
+        //    var sut = new FactorialDigitSum();
+        //    var actual = sut.GetDigitsSum(number);
+
+        //    actual.Should().Be(expected);
+        //}
     }
 }

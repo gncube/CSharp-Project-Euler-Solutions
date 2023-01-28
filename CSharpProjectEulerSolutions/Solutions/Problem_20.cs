@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using CSharpProjectEulerSolutions;
+using System.Diagnostics;
 
 public partial class ProjectEuler
 {
@@ -23,7 +24,11 @@ public partial class ProjectEuler
 
         var sum = 0;
 
+        int n = 100;
 
+        var processor = new FactorialDigitSum();
+
+        sum = processor.GetDigitsSum(n);
 
         Console.WriteLine($"Answer for the Problem #20 is : {sum}");
 

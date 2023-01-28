@@ -4,23 +4,13 @@ namespace CSharpProjectEulerSolutions.UnitTests;
 
 public class Problem_21Tests
 {
-    [Fact]
-    public void ReturnAnArrayOfProperDivisorsOf220()
+    [Theory]
+    [InlineData(220, new int[] { 1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110 })]
+    [InlineData(284, new int[] { 1, 2, 4, 71, 142 })]    
+    public void ReturnAnArrayOfProperDivisorsOfGivenNumber(int number, int[] expected)
     {
-        var number = 220;
         var sut = new AmicableNumbers();
-        List<int> properDivisors = new List<int>() { 1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110 };
-        var actual = sut.ProperDivisors(number);
-
-        actual.Should().BeEquivalentTo(properDivisors);
-    }
-
-    [Fact]
-    public void ReturnAnArrayOfProperDivisorsOf284()
-    {
-        var number = 284;
-        var sut = new AmicableNumbers();
-        List<int> properDivisors = new List<int>() { 1, 2, 4, 71, 142 };
+        List<int> properDivisors = expected.ToList();
         var actual = sut.ProperDivisors(number);
 
         actual.Should().BeEquivalentTo(properDivisors);

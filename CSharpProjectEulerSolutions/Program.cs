@@ -7,7 +7,7 @@ if (args.Length == 0)
     {
         Console.WriteLine("\n***************************************************************************************");
         Console.WriteLine("The following problems are taken from Project Euler at https://projecteuler.net/archives \n");
-        Console.Write("Enter the Problem number or Space to Exit:");
+        Console.Write("Enter the Problem number or Space to Exit: ");
         s = Console.ReadLine();
         if (!String.IsNullOrWhiteSpace(s))
         {
@@ -33,24 +33,12 @@ static void appMenu(string problemId)
         case "2":
             projectEuler.p2();
             break;
-        //case "3":
-        //    projectEuler.p3();
-        //    break;
-        //case "4":
-        //    projectEuler.p4();
-        //    break;
-        //case "5":
-        //    projectEuler.p5();
-        //    break;
-        //case "6":
-        //    projectEuler.p6();
-        //    break;
-        //case "7":
-        //    projectEuler.p7();
-        //    break;
-        //case "8":
-        //    projectEuler.p8();
-        //break;
+        case "19":
+            projectEuler.p19();
+            break;
+        case "20":
+            projectEuler.p20();
+            break;
         default:
             Console.WriteLine($"There is no solution for the problem # {problemId} yet. Please try it later. Thanks! \n");
             break;

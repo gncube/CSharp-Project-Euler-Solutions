@@ -41,6 +41,14 @@ public class Problem_21Tests
 
         amicableNumbers.Should().BeEquivalentTo(expected);
     }
+
+    [Theory]
+    [InlineData(10000, 31626)]
+    public void ReturnSumOfAmicableNumbers(int number, int expected)
+    {
+        var actual = sut.GetSumOfAmicableNumbers(number);
+        actual.Should().Be(expected);
+    }
 }
 
 /*

@@ -33,23 +33,16 @@ public partial class ProjectEuler
 
         for (int i = 1; i <= n; i++)
         {
-            var numbers = new List<int>();
-            numbers = processor.GetAmicableNumbers(i);
+            var number1 = processor.SumOfNumber(i);
+            var number2 = processor.SumOfNumber(processor.SumOfNumber(i));
 
-            if (numbers.Count > 0)
+            if (number2 == i && i < number1)
             {
-                Console.WriteLine($"--> {i} - {numbers.Count}");
-                foreach( var number in numbers ) 
-                { 
-                    if (number < 10000)
-                        amicableArray.Add(number);
-                }
+                sum = sum + i + number1;
             }
         }
 
-
-
-        Console.WriteLine($"Answer for the Problem #21 is : {processor.SumOfArray(amicableArray)}");
+        Console.WriteLine($"Answer for the Problem #21 is : {sum}");
 
         exeTime.Stop();
 

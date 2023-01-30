@@ -1,4 +1,6 @@
-﻿namespace CSharpProjectEulerSolutions;
+﻿using System.Diagnostics;
+
+namespace CSharpProjectEulerSolutions;
 
 /*https://stackoverflow.com/questions/36439222/project-euler-21
  */
@@ -50,5 +52,37 @@ public class AmicableNumbers
     public int SumOfArray(List<int> numbersList)
     {
         return numbersList.Sum();
+    }
+
+    public int SumOfNumber(int number)
+    {
+        var properDivisors = new List<int>();
+
+        for (int i = number; i > 1; i--)
+        {
+            if (number % i == 0)
+            {
+                int properDivisor = number / (int)i;
+                properDivisors.Add(properDivisor);
+            }
+        }
+
+        return properDivisors.Sum();
+    }
+
+    public long GetSumOfAmicableNumbers(int number)
+    {
+        long sum = 0;
+        for (int i = 1; i < number; i++)
+        {
+            var number1 = SumOfNumber(i);
+            var number2 = SumOfNumber(SumOfNumber(i));
+
+            if (number2 == i && i < number1)
+            {
+                sum = sum + i + number1;
+            }
+        }
+        return sum;
     }
 }

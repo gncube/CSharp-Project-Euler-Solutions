@@ -21,6 +21,9 @@ else
     appMenu(args[0]);
 }
 
+
+
+
 static void appMenu(string problemId)
 {
     var projectEuler = new ProjectEuler();
@@ -41,6 +44,9 @@ static void appMenu(string problemId)
             break;
         case "21":
             projectEuler.p21();
+            break;
+        case "22":
+            projectEuler.p22();
             break;
         default:
             Console.WriteLine($"There is no solution for the problem # {problemId} yet. Please try it later. Thanks! \n");

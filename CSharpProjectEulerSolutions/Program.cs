@@ -48,6 +48,12 @@ static void appMenu(string problemId)
         case "22":
             projectEuler.p22();
             break;
+        case "23":
+            projectEuler.p23();
+            break;
+        //case "24":
+        //    projectEuler.p24();
+        //    break;
         default:
             Console.WriteLine($"There is no solution for the problem # {problemId} yet. Please try it later. Thanks! \n");
             break;

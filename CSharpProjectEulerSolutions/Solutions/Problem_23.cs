@@ -5,7 +5,7 @@ public partial class ProjectEuler
 {
 
     // The following problem is taken from Project Euler.
-    // http://projecteuler.net/problem=22
+    // http://projecteuler.net/problem=23
     /*********** Names scores ****************** */
     /*
         Using names.txt (right click and 'Save Link/Target As...'), a 46K text file containing over five-thousand first names, begin by sorting it into alphabetical order. Then working out the alphabetical value for each name, multiply this value by its alphabetical position in the list to obtain a name score.
@@ -15,25 +15,18 @@ public partial class ProjectEuler
         What is the total of all the name scores in the file?
      */
 
-    public void p22()
+    public void p23()
     {
-        Console.WriteLine("Project Euler Problem #22:");
+        Console.WriteLine("Project Euler Problem #23:");
 
         var exeTime = Stopwatch.StartNew();
 
         var sum = 0;
 
-        var filePath = @"C:\REPOS\CSharp-Project-Euler-Solutions\CSharpProjectEulerSolutions.UnitTests\p022_names.txt";
+        var processor = new NonAbundantSums();
+        sum = processor.Solve();
 
-        string[] names = File.ReadAllText(filePath)
-            .Replace("\"", "")
-            .Split(',')
-            .ToArray();
-
-        var processor = new NameScores();
-        sum = processor.Solve(names);
-
-        Console.WriteLine($"Answer for the Problem #22 is : {sum}");
+        Console.WriteLine($"Answer for the Problem #23 is : {sum}");
 
         exeTime.Stop();
 

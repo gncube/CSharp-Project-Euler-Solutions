@@ -20,7 +20,7 @@ public class Problem_22Tests
     {
         var sut = new NameScores();
         string[] names = { "AARON", "AMELIA", "COLIN" };
-        int expected = 197;
+        int expected = 290;
         int actual = sut.Solve(names);
 
         actual.Should().Be(expected);

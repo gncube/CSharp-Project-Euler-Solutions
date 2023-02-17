@@ -2,7 +2,7 @@ using System.Diagnostics;
 
 namespace CSharpProjectEulerSolutions.UnitTests
 {
-    public class Program_19Tests
+    public class Problem_19Tests
     {
         [Fact]
         public void Return_The_Number_Of_Sundays_In_Date_Span()
